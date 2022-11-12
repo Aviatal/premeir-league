@@ -1,9 +1,43 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: rgb(179, 179, 214);
 }
-header {
-    width: 80%;
-    margin: auto;
+header 
+{
+    height: 100px;
+    
+    font-size: 90px;
     background-color: rgb(47, 42, 184);
+    font-family: 'Anton', serif;
+
+    padding: 40px 40px;
+}
+nav
+{
+    height: 5px;
+
+    background-color: rgb(89, 94, 110);
+
+    padding: 30px 40px;
+}
+nav ul
+{
+    margin-top: -16px;
+    list-style-type: none;
+}
+nav ul li
+{
+    float: left;
+    display: block;
+    padding: 10px;
+    border: 1px solid blue;
+
+    border-radius: 25%;
+}
+.center
+{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }

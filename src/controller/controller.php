@@ -17,19 +17,30 @@ class Controller
     }
     public function run()
     {
-        if(method_exists($this, $this->Request->getParam('action') . 'action'))
-        {
-            $action = $this->Request->getParam('action') . 'action';
-        }
-        else
-        {
-            $action = self::DEFAULT_ACTION;
-        }
-        $this->$action();
+        $methodName = $this->Request->getParam('action') . 'Action';
+        echo $methodName . "<br>";
+        
+        // if(!method_exists($this, $methodName))
+        // {
+        //     $methodName = self::DEFAULT_ACTION;
+        // }
+        echo $methodName;
+        $this->$methodName();
     }
     private function standingsAction()
     {
-        $this->View->render('');
+        $page = 'standings';
+        $this->View->render($page);
+    }
+    private function matchesAction()
+    {
+        $page = 'matches';
+        $this->View->render($page);
+    }
+    private function resultsAction()
+    {                
+        $page = 'results';
+        $this->View->render($page);
     }
 
 }

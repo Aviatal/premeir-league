@@ -10,11 +10,14 @@
         </header>
         <nav class="center">
             <ul>
-                <li>Standings</li>
-                <li>Matches</li>
-                <li>results</li>
+                <li><a href="/?action=standings">Standings</a></li>
+                <li><a href="/?action=matches">Mactches</a></li>
+                <li><a href="/?action=results">Results</a></li>
             </ul>
         </nav>
+        <section class="center">
+            <?php require_once("src/view/pages/$page.php"); ?>
+        </section>
 
     </body>
 </html>

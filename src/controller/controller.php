@@ -18,13 +18,11 @@ class Controller
     public function run()
     {
         $methodName = $this->Request->getParam('action') . 'Action';
-        echo $methodName . "<br>";
         
-        // if(!method_exists($this, $methodName))
-        // {
-        //     $methodName = self::DEFAULT_ACTION;
-        // }
-        echo $methodName;
+        if(!method_exists($this, $methodName))
+        {
+            $methodName = self::DEFAULT_ACTION;
+        }
         $this->$methodName();
     }
     private function standingsAction()

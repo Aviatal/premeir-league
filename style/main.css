@@ -50,6 +50,18 @@ nav ul li a, nav ul li a:visited, nav ul li a:active
 section
 {
     background-color: white;
+    padding: 40px 0px;
+}
+td, th
+{
+    border: 1px solid black;
+}
+table
+{
+    border-collapse: collapse;
+    width: 90%;
+    text-align: center;
+    border-spacing: 0px;
 }
 .center
 {

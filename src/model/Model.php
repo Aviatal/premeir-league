@@ -30,4 +30,15 @@
             return false;
         }
     }
+    private function getStandings() :array
+    {
+        $query = "SELECT name, points ,goals_scored, goals_canceed, match_played, wins, losses, draws 
+                  FROM teams 
+                  ORDER BY points DESC,
+                           goals_scored - goals_canceed DESC,
+                           goals_scored DESC;";
+        
+        $result = $this->conn->query($query, PDO::FETCH_ASSOC);
+        return $result->fetchAll();
+    }
  }

@@ -8,12 +8,17 @@ class Controller
 {
     public View $View;
     public Request $Request;
+    public static $configuration;
     public const DEFAULT_ACTION = "standingsAction";
 
     public function __construct(Request $request)
     {
         $this->View = new View();
         $this->Request = $request;
+    }
+    public static function initConfiguration(array $config)
+    {
+        self::$configuration = $config;
     }
     public function run()
     {

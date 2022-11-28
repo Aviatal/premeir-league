@@ -3,16 +3,19 @@ declare(strict_types=1);
 
 require_once('src\view\View.php');
 require_once('src\Request.php');
+require_once('src\model\Model.php');
 
 class Controller
 {
     public View $View;
+    public Model $Model;
     public Request $Request;
     public static $configuration;
     public const DEFAULT_ACTION = "standingsAction";
 
     public function __construct(Request $request)
     {
+        $this->Model = new Model(self::$configuration);
         $this->View = new View();
         $this->Request = $request;
     }

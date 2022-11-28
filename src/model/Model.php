@@ -10,11 +10,12 @@
     {
         if($this->validateConfig($config))
         {
-
+            $dsn = "mysql:dbname={$config['database']};host={$config['host']}";
+            $this->conn = new PDO($dsn, $config['user'], $config['password']);
         }
         else
         {
-            
+            echo "Config went wrong";
         }
     }
     private function validateConfig(array $config) :bool
